@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div>
+        <div class="d-flex justify-content-between">
+            <h1>Welcome, @Context.Session.GetString("name")</h1>
+            <a href="/logout" class="btn btn-danger">Log Out</a>
+        </div>
+        <div class="text-center">
+            <h1>@Context.Session.GetInt32("Sum")</h1>
+            @* <div>
+                <a href="/addone" class="btn btn-primary"> + 1</a>
+                <a href="/minusone" class="btn btn-primary"> - 1</a>
+                <a href="/timestwo" class="btn btn-primary"> x 2</a>
+                <a href="/random" class="btn btn-primary"> Random </a>
+            </div> *@
+            <div class="d-flex justify-content-center">
+                <form action="/oneforall">
+                    <input type="hidden" id="" name="name" value="PlusOne">
+                    <button type="submit" class="btn btn-primary mx-3" > +1 </button>
+                </form>
+                <form action="/oneforall">
+                    <input type="hidden" id="" name="name" value="MinusOne">
+                    <button type="submit" class="btn btn-primary mx-3" > -1 </button>
+                </form>
+                <form action="/oneforall">
+                    <input type="hidden" id="" name="name" value="TimesTwo">
+                    <button type="submit" class="btn btn-primary mx-3" > x 2 </button>
+                </form>
+                <form action="/oneforall">
+                    <input type="hidden" id="" name="name" value="Random">
+                    <button type="submit" class="btn btn-primary mx-3" > Random </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
